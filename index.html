@@ -1,0 +1,3221 @@
+
+  
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skincare Shop - valecare</title>
+  <!DOCTYPE html>
+<img src="logoval.jpg" alt="Logoval">
+
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skincare Shop - valecare</title>
+  
+  <!-- Tipografía Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #e88fac;
+      --primary-dark: #d45c82;
+      --primary-hover: #b9476b;
+      --accent: #78a88b;
+      --accent-hover: #5f806b;
+      --bg-main: #fff5f8;
+      --bg-card: #ffffff;
+      --bg-soft: #f8dce6;
+      --text-dark: #4a3e43;
+      --text-muted: #7a6a71;
+      --border-radius: 16px;
+      --shadow: 0 10px 25px rgba(212, 92, 130, 0.08);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* Top Announcement Bar */
+    .nota {
+      background: linear-gradient(90deg, #f7cbd9, #f4b8ca);
+      padding: 10px 15px;
+      text-align: center;
+      color: #71394d;
+      font-weight: 500;
+      font-size: 0.9rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    }
+
+    /* Header Banner */
+    header {
+      padding: 50px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #e88fac 0%, #f4b8ca 100%);
+      color: white;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 5px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.95;
+      font-weight: 300;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      display: flex;
+      background-color: var(--accent);
+      justify-content: center;
+      gap: 15px;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .navbar a {
+      color: white;
+      padding: 8px 18px;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 20px;
+      transition: var(--transition);
+    }
+
+    .navbar a:hover {
+      background-color: white;
+      color: var(--accent-hover);
+    }
+
+    /* Selector Global de Moneda */
+    .currency-selector-global {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(8px);
+      padding: 6px 14px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: white;
+      font-size: 0.85rem;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .currency-selector-global select {
+      background: white;
+      color: var(--text-dark);
+      border: none;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-family: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      outline: none;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1250px;
+      margin: 30px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      color: var(--primary-dark);
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 8px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background-color: var(--accent);
+      border-radius: 2px;
+    }
+
+    /* Products Grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 22px;
+    }
+
+    .producto-card {
+      background: var(--bg-card);
+      border-radius: var(--border-radius);
+      padding: 20px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      border: 1px solid #fae6ed;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+    }
+
+    .producto-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(212, 92, 130, 0.15);
+    }
+
+    .producto-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: contain;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      background-color: #fff9fb;
+      padding: 10px;
+    }
+
+    .producto-card h3 {
+      font-size: 1.1rem;
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+    }
+
+    .producto-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      flex-grow: 1;
+    }
+
+    .precio-tag {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--accent-hover);
+      margin-bottom: 12px;
+    }
+
+    .card-controls {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Form Controls & Buttons */
+    .cantidad {
+      width: 60px;
+      padding: 8px;
+      border: 1.5px solid #f0c2d1;
+      border-radius: 10px;
+      text-align: center;
+      font-family: inherit;
+      font-weight: 600;
+      outline: none;
+    }
+
+    .cantidad:focus {
+      border-color: var(--primary-dark);
+    }
+
+    button.btn-primary {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(212, 92, 130, 0.25);
+    }
+
+    button.btn-primary:hover {
+      background: linear-gradient(135deg, var(--primary-hover), var(--primary-dark));
+      transform: scale(1.02);
+    }
+
+    button.btn-danger {
+      background-color: #e76f51;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.8rem;
+
+    }
+
+    /* Sidebar / Sidebar Panels */
+    .sidebar-panel {
+      background: var(--bg-card);
+      border-radius: var(--border-radius);
+      padding: 25px;
+      box-shadow: var(--shadow);
+      border: 1px solid #fae6ed;
+      margin-bottom: 25px;
+    }
+
+    /* Carrito Layout */
+    .carrito-item {
+      background-color: var(--bg-main);
+      padding: 12px 15px;
+      margin: 10px 0;
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-left: 4px solid var(--primary-dark);
+    }
+
+    .carrito-item-info h4 {
+      font-size: 0.95rem;
+      color: var(--primary-dark);
+    }
+
+    .carrito-item-info p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .totales-box {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 2px dashed #f5ceda;
+    }
+
+    .linea-resumen {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    .linea-resumen.total {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-top: 10px;
+    }
+
+    /* Formulario styling */
+    .formulario label {
+      display: block;
+      margin-top: 14px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: var(--accent-hover);
+    }
+
+    .formulario input,
+    .formulario select,
+    .formulario textarea {
+      width: 100%;
+      padding: 10px 14px;
+      margin-top: 6px;
+      border: 1.5px solid #eec4d2;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      outline: none;
+      transition: var(--transition);
+      background-color: #fffafc;
+    }
+
+    .formulario input:focus,
+    .formulario select:focus,
+    .formulario textarea:focus {
+      border-color: var(--primary-dark);
+      background-color: #fff;
+    }
+
+    #opcionesPlazos {
+      display: none;
+      background-color: #fff0f5;
+      padding: 15px;
+      margin-top: 15px;
+      border-radius: 12px;
+      border: 1px solid #f4b8ca;
+    }
+
+    /* Ticket Digital Imprimible Modal/Card */
+    #modalTicket {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .ticket-card {
+      background: #ffffff;
+      width: 100%;
+      max-width: 420px;
+      max-height: 90vh;
+      overflow-y: auto;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      font-family: 'Courier New', Courier, monospace;
+      color: #222;
+      position: relative;
+    }
+
+    .ticket-header {
+      text-align: center;
+      border-bottom: 2px dashed #bbb;
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+    }
+
+    .ticket-header h2 {
+      font-family: 'Poppins', sans-serif;
+      color: var(--primary-dark);
+      font-size: 1.8rem;
+    }
+
+    .ticket-details {
+      font-size: 0.85rem;
+      margin-bottom: 15px;
+      border-bottom: 1px dashed #ccc;
+      padding-bottom: 10px;
+    }
+
+    .ticket-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin-bottom: 15px;
+    }
+
+    .ticket-table th, .ticket-table td {
+      text-align: left;
+      padding: 4px 0;
+    }
+
+    .ticket-table td.monto {
+      text-align: right;
+    }
+
+    .ticket-totales {
+      border-top: 2px dashed #bbb;
+      padding-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    .ticket-footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: #666;
+    }
+
+    .ticket-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .ticket-actions button {
+      flex: 1;
+      padding: 10px;
+      border-radius: 10px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-print {
+      background-color: var(--accent);
+      color: white;
+    }
+
+    .btn-close {
+      background-color: #ccc;
+      color: #333;
+    }
+
+    /* Responsivo */
+    @media screen and (max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+      .currency-selector-global {
+        position: static;
+        margin: 10px auto 0;
+        width: fit-content;
+      }
+    }
+
+    /* CSS Exclusivo para Impresión */
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #modalTicket, #modalTicket * {
+        visibility: visible;
+      }
+      #modalTicket {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+        background: none;
+      }
+      .ticket-actions {
+        display: none !important;
+      }
+      .ticket-card {
+        box-shadow: none;
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Nota Superior -->
+  <div class="nota">
+     Skincare bonito para cuidar tu piel todos los días ♡ | Envíos a todo el país
+  </div>
+
+  <!-- Header -->
+  <header id="inicio">
+    <div class="currency-selector-global">
+      <span> Moneda:</span>
+      <select id="monedaSelect" onchange="cambiarMoneda()">
+        <option value="MXN" data-symbol="$" data-rate="1">MXN ($)</option>
+        <option value="USD" data-symbol="$" data-rate="0.055">USD ($)</option>
+        <option value="EUR" data-symbol="€" data-rate="0.051">EUR (€)</option>
+        <option value="GBP" data-symbol="£" data-rate="0.043">GBP (£)</option>
+        <option value="CAD" data-symbol="$" data-rate="0.076">CAD ($)</option>
+        <option value="ARS" data-symbol="$" data-rate="580.0">ARS ($)</option>
+        <option value="CLP" data-symbol="$" data-rate="52.0">CLP ($)</option>
+        <option value="COP" data-symbol="$" data-rate="230.0">COP ($)</option>
+      </select>
+    </div>
+    <h1>valecare</h1>
+    <p>La mejor rutina de cuidado facial para tu piel</p>
+  </header>
+
+  <!-- Navegación -->
+  <nav class="navbar">
+    <a href="#inicio">Inicio</a>
+    <a href="#productos">Productos</a>
+    <a href="#carrito">Carrito</a>
+    <a href="#pedido">Realizar Pedido</a>
+  </nav>
+
+  <!-- Contenido Principal -->
+  <div class="container">
+
+    <!-- Sección de Productos (Izquierda / Principal) -->
+    <div>
+      <h2 class="section-title" id="productos">Nuestros Productos</h2>
+
+      <div class="products-grid">
+
+        <!-- Agua micelar -->
+        <div class="producto-card">
+          <div>
+            <img src="aguamicelar.jpg" alt="Agua micelar">
+            <h3>Agua micelar</h3>
+            <p>Limpia suavemente el rostro y retira maquillaje e impurezas.</p>
+          </div>
+          <div>
+            <div class="precio-tag"><span class="simboloMoneda">$</span><span class="precioBase" data-precio-mxn="450">450</span></div>
+            <div class="card-controls">
+              <input type="number" id="cantidadAgua" class="cantidad" value="1" min="1">
+              <button class="btn-primary" onclick="agregarProducto('Agua micelar', 450, 'cantidadAgua')">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jabón facial -->
+        <div class="producto-card">
+          <div>
+            <img src="jaboncara.jpg" alt="Jabón facial">
+            <h3>Jabón facial</h3>
+            <p>Elimina el exceso de grasa y suciedad sin resecar la piel.</p>
+          </div>
+          <div>
+            <div class="precio-tag"><span class="simboloMoneda">$</span><span class="precioBase" data-precio-mxn="480">480</span></div>
+            <div class="card-controls">
+              <input type="number" id="cantidadJabon" class="cantidad" value="1" min="1">
+              <button class="btn-primary" onclick="agregarProducto('Jabón facial', 480, 'cantidadJabon')">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Protector solar -->
+        <div class="producto-card">
+          <div>
+            <img src="protectorsolar.jpg" alt="Protector solar">
+            <h3>Protector solar</h3>
+            <p>Protege la piel de los rayos UV con textura ligera FPS 50+.</p>
+          </div>
+          <div>
+            <div class="precio-tag"><span class="simboloMoneda">$</span><span class="precioBase" data-precio-mxn="350">350</span></div>
+            <div class="card-controls">
+              <input type="number" id="cantidadProtector" class="cantidad" value="1" min="1">
+              <button class="btn-primary" onclick="agregarProducto('Protector solar', 350, 'cantidadProtector')">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exfoliante -->
+        <div class="producto-card">
+          <div>
+            <img src="exfoliante.jpg" alt="Exfoliante facial">
+            <h3>Exfoliante facial</h3>
+            <p>Elimina células muertas dejando una textura suave y renovada.</p>
+          </div>
+          <div>
+            <div class="precio-tag"><span class="simboloMoneda">$</span><span class="precioBase" data-precio-mxn="220">220</span></div>
+            <div class="card-controls">
+              <input type="number" id="cantidadExfoliante" class="cantidad" value="1" min="1">
+              <button class="btn-primary" onclick="agregarProducto('Exfoliante facial', 220, 'cantidadExfoliante')">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Crema hidratante -->
+        <div class="producto-card">
+          <div>
+            <img src="crema.jpg" alt="Crema hidratante">
+            <h3>Crema hidratante</h3>
+            <p>Mantiene la piel suave, nutrida y radiante todo el día.</p>
+          </div>
+          <div>
+            <div class="precio-tag"><span class="simboloMoneda">$</span><span class="precioBase" data-precio-mxn="400">400</span></div>
+            <div class="card-controls">
+              <input type="number" id="cantidadCrema" class="cantidad" value="1" min="1">
+              <button class="btn-primary" onclick="agregarProducto('Crema hidratante', 400, 'cantidadCrema')">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contorno de ojos -->
+        <div class="producto-card">
+          <div>
+            <img src="contornoojos.jpg" alt="Contorno de ojos">
+            <h3>Contorno de ojos</h3>
+            <p>Fórmula delicada para desinflamar e hidratar las ojeras.</p>
+          </div>
+          <div>
+            <div class="precio-tag"><span class="simboloMoneda">$</span><span class="precioBase" data-precio-mxn="300">300</span></div>
+            <div class="card-controls">
+              <input type="number" id="cantidadContorno" class="cantidad" value="1" min="1">
+              <button class="btn-primary" onclick="agregarProducto('Contorno de ojos', 300, 'cantidadContorno')">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tratamiento para acné -->
+        <div class="producto-card">
+          <div>
+            <img src="acne.jpg" alt="Tratamiento para el acné">
+            <h3>Tratamiento acné</h3>
+            <p>Reduce imperfecciones y calma rojeces eficazmente.</p>
+          </div>
+          <div>
+            <div class="precio-tag"><span class="simboloMoneda">$</span><span class="precioBase" data-precio-mxn="670">670</span></div>
+            <div class="card-controls">
+              <input type="number" id="cantidadAcne" class="cantidad" value="1" min="1">
+              <button class="btn-primary" onclick="agregarProducto('Tratamiento para el acné', 670, 'cantidadAcne')">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sérum facial -->
+        <div class="producto-card">
+          <div>
+            <img src="serum.jpg" alt="Sérum facial">
+            <h3>Sérum facial</h3>
+            <p>Aporta hidratación profunda e iluminación instantánea.</p>
+          </div>
+          <div>
+            <div class="precio-tag"><span class="simboloMoneda">$</span><span class="precioBase" data-precio-mxn="720">720</span></div>
+            <div class="card-controls">
+              <input type="number" id="cantidadSerum" class="cantidad" value="1" min="1">
+              <button class="btn-primary" onclick="agregarProducto('Sérum facial', 720, 'cantidadSerum')">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Barra Lateral (Carrito + Formulario) -->
+    <div>
+
+      <!-- Carrito -->
+      <div class="sidebar-panel" id="carrito">
+        <h2 class="section-title">Tu Carrito</h2>
+
+        <div id="listaCarrito">
+          <p style="color: var(--text-muted); font-size: 0.9rem;">El carrito está vacío.</p>
+        </div>
+
+        <div class="totales-box">
+          <div class="linea-resumen">
+            <span>Subtotal:</span>
+            <span><span class="simboloMoneda">$</span><span id="subtotal">0.00</span></span>
+          </div>
+          <div class="linea-resumen">
+            <span>Envío:</span>
+            <span><span class="simboloMoneda">$</span><span id="envio">0.00</span></span>
+          </div>
+          <div class="linea-resumen total">
+            <span>Total:</span>
+            <span><span class="simboloMoneda">$</span><span id="total">0.00</span></span>
+          </div>
+        </div>
+
+        <button class="btn-danger" style="width: 100%; margin-top: 15px;" onclick="vaciarCarrito()">Vaciar carrito</button>
+      </div>
+
+      <!-- Formulario de Pedido -->
+      <div class="sidebar-panel formulario" id="pedido">
+        <h2 class="section-title">Datos del Pedido</h2>
+
+        <label>Nombre completo:</label>
+        <input type="text" id="nombre" placeholder="Ej. Valeria Gómez">
+
+        <label>Correo electrónico:</label>
+        <input type="email" id="correo" placeholder="ejemplo@correo.com">
+
+        <label>Teléfono:</label>
+        <input type="tel" id="telefono" placeholder="10 dígitos">
+
+        <label>Dirección:</label>
+        <input type="text" id="direccion" placeholder="Calle y número">
+
+        <label>Colonia:</label>
+        <input type="text" id="colonia" placeholder="Tu colonia">
+
+        <label>Ciudad:</label>
+        <input type="text" id="ciudad" placeholder="Tu ciudad">
+
+        <label>Código postal:</label>
+        <input type="text" id="cp" placeholder="Código postal">
+
+        <label>Tipo de entrega:</label>
+        <select id="entrega" onchange="calcularTotal()">
+          <option value="normal">Envío normal (MXN $80)</option>
+          <option value="express">Envío express (MXN $150)</option>
+        </select>
+
+        <label>Método de pago:</label>
+        <select id="metodoPago" onchange="mostrarPlazos()">
+          <option value="">Selecciona método</option>
+          <option value="Tarjeta">Tarjeta de Crédito / Débito</option>
+          <option value="Transferencia">Transferencia bancaria</option>
+          <option value="Efectivo">Efectivo contra entrega</option>
+          <option value="Plazos">Pago a plazos</option>
+        </select>
+
+        <!-- Opciones de Pago a Plazos -->
+        <div id="opcionesPlazos">
+          <label>Número de plazos:</label>
+          <select id="plazos" onchange="calcularPlazo()">
+            <option value="3">3 meses</option>
+            <option value="6">6 meses</option>
+            <option value="12">12 meses</option>
+          </select>
+
+          <p style="margin-top: 8px; font-size: 0.85rem; font-weight: 600; color: var(--primary-dark);">
+            Mensualidad aprox: <span class="simboloMoneda">$</span><span id="cantidadPlazo">0.00</span>
+          </p>
+        </div>
+
+        <label>Instrucciones de entrega:</label>
+        <textarea id="comentarios" placeholder="Ej. Dejar con el vigilante..."></textarea>
+
+        <button class="btn-primary" style="width: 100%; margin-top: 20px;" onclick="realizarPedido()">Confirmar y Generar Ticket</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- MODAL / TICKET DIGITAL IMPRIMIBLE -->
+  <div id="modalTicket">
+    <div class="ticket-card">
+      <div class="ticket-header">
+        <h2>valecare ♡</h2>
+        <p>Comprobante Digital de Compra</p>
+        <p style="font-size: 0.75rem; margin-top: 4px;" id="ticketFecha"></p>
+      </div>
+
+      <div class="ticket-details">
+        <p><b>Orden:</b> #VC-<span id="ticketFolio"></span></p>
+        <p><b>Cliente:</b> <span id="ticketCliente"></span></p>
+        <p><b>Dirección:</b> <span id="ticketDireccion"></span></p>
+        <p><b>Pago:</b> <span id="ticketMetodo"></span></p>
+        <p><b>Moneda:</b> <span id="ticketMoneda"></span></p>
+      </div>
+
+      <table class="ticket-table">
+        <thead>
+          <tr>
+            <th>Cant. / Prod</th>
+            <th style="text-align: right;">Total</th>
+          </tr>
+        </thead>
+        <tbody id="ticketProductosBody"></tbody>
+      </table>
+
+      <div class="ticket-totales">
+        <div style="display: flex; justify-content: space-between;">
+          <span>Subtotal:</span>
+          <span><span id="ticketSimboloSub"></span><span id="ticketSubtotal"></span></span>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+          <span>Envío:</span>
+          <span><span id="ticketSimboloEnv"></span><span id="ticketEnvio"></span></span>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 1.05rem; margin-top: 5px;">
+          <span>TOTAL:</span>
+          <span><span id="ticketSimboloTot"></span><span id="ticketTotal"></span></span>
+        </div>
+        <div id="ticketPlazosInfo" style="margin-top: 6px; font-size: 0.8rem; color: #555;"></div>
+      </div>
+
+      <div class="ticket-footer">
+        <p>¡Gracias por cuidar tu piel con nosotros!</p>
+        <p>www.valecare.com</p>
+      </div>
+
+      <div class="ticket-actions">
+        <button class="btn-print" onclick="window.print()">Imprimir Ticket</button>
+        <button class="btn-close" onclick="cerrarTicket()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <h2>valecare</h2>
+    <p>Gracias por visitar nuestra tienda ♡</p>
+    <p>Skincare bonito para cuidar tu piel todos los días.</p>
+  </footer>
+
+
+  <script>
+    // Carrito de compras en MXN base
+    let carrito = [];
+
+    // Helper para obtener tasa de cambio actual
+    function getMonedaActual() {
+      let select = document.getElementById("monedaSelect");
+      let option = select.options[select.selectedIndex];
+      return {
+        code: option.value,
+        symbol: option.getAttribute("data-symbol"),
+        rate: parseFloat(option.getAttribute("data-rate"))
+      };
+    }
+
+    // Actualizar vista de precios en el catálogo
+    function cambiarMoneda() {
+      let m = getMonedaActual();
+
+      // Cambiar símbolos en la UI
+      document.querySelectorAll(".simboloMoneda").forEach(el => el.textContent = m.symbol);
+
+      // Recalcular precios de catálogo
+      document.querySelectorAll(".precioBase").forEach(el => {
+        let precioMXN = parseFloat(el.getAttribute("data-precio-mxn"));
+        let precioConvertido = (precioMXN * m.rate).toFixed(2);
+        el.textContent = precioConvertido;
+      });
+
+      // Recalcular totales del carrito
+      actualizarCarrito();
+    }
+
+    // Agregar producto al carrito
+    function agregarProducto(nombre, precioMXN, idCantidad) {
+      let cantidadInput = document.getElementById(idCantidad);
+      let cantidad = parseInt(cantidadInput.value);
+
+      if (cantidad < 1 || isNaN(cantidad)) {
+        alert("La cantidad debe ser de al menos 1 pieza.");
+        return;
+      }
+
+      let productoExistente = carrito.find(item => item.nombre === nombre);
+
+      if (productoExistente) {
+        productoExistente.cantidad += cantidad;
+      } else {
+        carrito.push({
+          nombre: nombre,
+          precioMXN: precioMXN,
+          cantidad: cantidad
+        });
+      }
+
+      actualizarCarrito();
+      alert(`¡${cantidad} pieza(s) de "${nombre}" agregadas al carrito!`);
+    }
+
+    // Actualizar vista del carrito
+    function actualizarCarrito() {
+      let lista = document.getElementById("listaCarrito");
+      let m = getMonedaActual();
+      lista.innerHTML = "";
+
+      if (carrito.length === 0) {
+        lista.innerHTML = '<p style="color: var(--text-muted); font-size: 0.9rem;">El carrito está vacío.</p>';
+      } else {
+        carrito.forEach((producto, index) => {
+          let precioConvertido = (producto.precioMXN * m.rate).toFixed(2);
+          let subtotalProducto = (precioConvertido * producto.cantidad).toFixed(2);
+
+          let div = document.createElement("div");
+          div.className = "carrito-item";
+          div.innerHTML = `
+            <div class="carrito-item-info">
+              <h4>${producto.nombre}</h4>
+              <p>Cant: ${producto.cantidad} | P/U: ${m.symbol}${precioConvertido}</p>
+              <p>Subtotal: <b>${m.symbol}${subtotalProducto}</b></p>
+            </div>
+            <button class="btn-danger" onclick="eliminarProducto(${index})">✕</button>
+          `;
+          lista.appendChild(div);
+        });
+      }
+
+      calcularTotal();
+    }
+
+    // Eliminar producto
+    function eliminarProducto(index) {
+      carrito.splice(index, 1);
+      actualizarCarrito();
+    }
+
+    // Vaciar carrito
+    function vaciarCarrito() {
+      carrito = [];
+      actualizarCarrito();
+    }
+
+    // Calcular Totales
+    function calcularTotal() {
+      let m = getMonedaActual();
+      let subtotalMXN = 0;
+
+      carrito.forEach(prod => {
+        subtotalMXN += prod.precioMXN * prod.cantidad;
+      });
+
+      let costoEnvioMXN = 0;
+      if (carrito.length > 0) {
+        let tipoEntrega = document.getElementById("entrega").value;
+        costoEnvioMXN = tipoEntrega === "express" ? 150 : 80;
+      }
+
+      let totalMXN = subtotalMXN + costoEnvioMXN;
+
+      // Conversión final a moneda seleccionada
+      let subtotalFinal = (subtotalMXN * m.rate).toFixed(2);
+      let envioFinal = (costoEnvioMXN * m.rate).toFixed(2);
+      let totalFinal = (totalMXN * m.rate).toFixed(2);
+
+      document.getElementById("subtotal").textContent = subtotalFinal;
+      document.getElementById("envio").textContent = envioFinal;
+      document.getElementById("total").textContent = totalFinal;
+
+      calcularPlazo();
+    }
+
+    // Opciones de pagos a plazos
+    function mostrarPlazos() {
+      let metodo = document.getElementById("metodoPago").value;
+      let opciones = document.getElementById("opcionesPlazos");
+      opciones.style.display = metodo === "Plazos" ? "block" : "none";
+      calcularPlazo();
+    }
+
+    function calcularPlazo() {
+      let metodo = document.getElementById("metodoPago").value;
+      if (metodo !== "Plazos") {
+        document.getElementById("cantidadPlazo").textContent = "0.00";
+        return;
+      }
+
+      let total = parseFloat(document.getElementById("total").textContent) || 0;
+      let numPlazos = parseInt(document.getElementById("plazos").value);
+      let pagoPorPlazo = (total / numPlazos).toFixed(2);
+
+      document.getElementById("cantidadPlazo").textContent = pagoPorPlazo;
+    }
+
+    // Realizar Pedido & Generar Ticket
+    function realizarPedido() {
+      if (carrito.length === 0) {
+        alert("Por favor agrega al menos un producto al carrito.");
+        return;
+      }
+
+      let nombre = document.getElementById("nombre").value.trim();
+      let correo = document.getElementById("correo").value.trim();
+      let telefono = document.getElementById("telefono").value.trim();
+      let direccion = document.getElementById("direccion").value.trim();
+      let colonia = document.getElementById("colonia").value.trim();
+      let ciudad = document.getElementById("ciudad").value.trim();
+      let cp = document.getElementById("cp").value.trim();
+      let metodo = document.getElementById("metodoPago").value;
+
+      if (!nombre || !correo || !telefono || !direccion || !colonia || !ciudad || !cp || !metodo) {
+        alert("Por favor completa todos los campos del formulario.");
+        return;
+      }
+
+      // Llenar datos del Ticket
+      let m = getMonedaActual();
+      let fecha = new Date().toLocaleString();
+      let folio = Math.floor(100000 + Math.random() * 900000);
+
+      document.getElementById("ticketFecha").textContent = fecha;
+      document.getElementById("ticketFolio").textContent = folio;
+      document.getElementById("ticketCliente").textContent = nombre;
+      document.getElementById("ticketDireccion").textContent = `${direccion}, ${colonia}, ${ciudad}`;
+      document.getElementById("ticketMetodo").textContent = metodo;
+      document.getElementById("ticketMoneda").textContent = `${m.code} (${m.symbol})`;
+
+      // Renderizar productos en ticket
+      let tbody = document.getElementById("ticketProductosBody");
+      tbody.innerHTML = "";
+
+      carrito.forEach(p => {
+        let pUnit = (p.precioMXN * m.rate).toFixed(2);
+        let pSub = (pUnit * p.cantidad).toFixed(2);
+
+        let tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${p.cantidad}x ${p.nombre}</td>
+          <td class="monto">${m.symbol}${pSub}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      let sub = document.getElementById("subtotal").textContent;
+      let env = document.getElementById("envio").textContent;
+      let tot = document.getElementById("total").textContent;
+
+      document.getElementById("ticketSimboloSub").textContent = m.symbol;
+      document.getElementById("ticketSubtotal").textContent = sub;
+      
+      document.getElementById("ticketSimboloEnv").textContent = m.symbol;
+      document.getElementById("ticketEnvio").textContent = env;
+
+      document.getElementById("ticketSimboloTot").textContent = m.symbol;
+      document.getElementById("ticketTotal").textContent = tot;
+
+      let plazosInfo = document.getElementById("ticketPlazosInfo");
+      if (metodo === "Plazos") {
+        let nPlazos = document.getElementById("plazos").value;
+        let cantPlazo = document.getElementById("cantidadPlazo").textContent;
+        plazosInfo.innerHTML = `* Financiado a ${nPlazos} meses de ${m.symbol}${cantPlazo} c/u`;
+      } else {
+        plazosInfo.innerHTML = "";
+      }
+
+      // Mostrar Modal del Ticket
+      document.getElementById("modalTicket").style.display = "flex";
+    }
+
+    function cerrarTicket() {
+      document.getElementById("modalTicket").style.display = "none";
+    }
+
+    // Inicializar visualización de moneda por defecto
+    cambiarMoneda();
+  </script>
+
+</body>
+</html>
+  <!-- Tipografía Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #e88fac;
+      --primary-dark: #d45c82;
+      --primary-hover: #b9476b;
+      --accent: #78a88b;
+      --accent-hover: #5f806b;
+      --bg-main: #fff5f8;
+      --bg-card: #ffffff;
+      --bg-soft: #f8dce6;
+      --text-dark: #4a3e43;
+      --text-muted: #7a6a71;
+      --border-radius: 16px;
+      --shadow: 0 10px 25px rgba(212, 92, 130, 0.08);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* Top Announcement Bar */
+    .nota {
+      background: linear-gradient(90deg, #f7cbd9, #f4b8ca);
+      padding: 10px 15px;
+      text-align: center;
+      color: #71394d;
+      font-weight: 500;
+      font-size: 0.9rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    }
+
+    /* Header Banner */
+    header {
+      padding: 50px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #e88fac 0%, #f4b8ca 100%);
+      color: white;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 5px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.95;
+      font-weight: 300;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      display: flex;
+      background-color: var(--accent);
+      justify-content: center;
+      gap: 15px;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .navbar a {
+      color: white;
+      padding: 8px 18px;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 20px;
+      transition: var(--transition);
+    }
+
+    .navbar a:hover {
+      background-color: white;
+      color: var(--accent-hover);
+    }
+
+    /* Selector Global de Moneda */
+    .currency-selector-global {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(8px);
+      padding: 6px 14px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: white;
+      font-size: 0.85rem;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .currency-selector-global select {
+      background: white;
+      color: var(--text-dark);
+      border: none;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-family: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      outline: none;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1250px;
+      margin: 30px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      color: var(--primary-dark);
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 8px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background-color: var(--accent);
+      border-radius: 2px;
+    }
+
+    /* Products Grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 22px;
+    }
+
+    .producto-card {
+      background: var(--bg-card);
+      border-radius: var(--border-radius);
+      padding: 20px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      border: 1px solid #fae6ed;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+    }
+
+    .producto-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(212, 92, 130, 0.15);
+    }
+
+    .producto-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: contain;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      background-color: #fff9fb;
+      padding: 10px;
+    }
+
+    .producto-card h3 {
+      font-size: 1.1rem;
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+    }
+
+    .producto-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      flex-grow: 1;
+    }
+
+    .precio-tag {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--accent-hover);
+      margin-bottom: 12px;
+    }
+
+    .card-controls {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Form Controls & Buttons */
+    .cantidad {
+      width: 60px;
+      padding: 8px;
+      border: 1.5px solid #f0c2d1;
+      border-radius: 10px;
+      text-align: center;
+      font-family: inherit;
+      font-weight: 600;
+      outline: none;
+    }
+
+    .cantidad:focus {
+      border-color: var(--primary-dark);
+    }
+
+    button.btn-primary {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(212, 92, 130, 0.25);
+    }
+
+    button.btn-primary:hover {
+      background: linear-gradient(135deg, var(--primary-hover), var(--primary-dark));
+      transform: scale(1.02);
+    }
+
+    button.btn-danger {
+      background-color: #e76f51;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.8rem;
+
+    }
+
+    /* Sidebar / Sidebar Panels */
+    .sidebar-panel {
+      background: var(--bg-card);
+      border-radius: var(--border-radius);
+      padding: 25px;
+      box-shadow: var(--shadow);
+      border: 1px solid #fae6ed;
+      margin-bottom: 25px;
+    }
+
+    /* Carrito Layout */
+    .carrito-item {
+      background-color: var(--bg-main);
+      padding: 12px 15px;
+      margin: 10px 0;
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-left: 4px solid var(--primary-dark);
+    }
+
+    .carrito-item-info h4 {
+      font-size: 0.95rem;
+      color: var(--primary-dark);
+    }
+
+    .carrito-item-info p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .totales-box {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 2px dashed #f5ceda;
+    }
+
+    .linea-resumen {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    .linea-resumen.total {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-top: 10px;
+    }
+
+    /* Formulario styling */
+    .formulario label {
+      display: block;
+      margin-top: 14px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: var(--accent-hover);
+    }
+
+    .formulario input,
+    .formulario select,
+    .formulario textarea {
+      width: 100%;
+      padding: 10px 14px;
+      margin-top: 6px;
+      border: 1.5px solid #eec4d2;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      outline: none;
+      transition: var(--transition);
+      background-color: #fffafc;
+    }
+
+    .formulario input:focus,
+    .formulario select:focus,
+    .formulario textarea:focus {
+      border-color: var(--primary-dark);
+      background-color: #fff;
+    }
+
+    #opcionesPlazos {
+      display: none;
+      background-color: #fff0f5;
+      padding: 15px;
+      margin-top: 15px;
+      border-radius: 12px;
+      border: 1px solid #f4b8ca;
+    }
+
+    /* Ticket Digital Imprimible Modal/Card */
+    #modalTicket {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .ticket-card {
+      background: #ffffff;
+      width: 100%;
+      max-width: 420px;
+      max-height: 90vh;
+      overflow-y: auto;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      font-family: 'Courier New', Courier, monospace;
+      color: #222;
+      position: relative;
+    }
+
+    .ticket-header {
+      text-align: center;
+      border-bottom: 2px dashed #bbb;
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+    }
+
+    .ticket-header h2 {
+      font-family: 'Poppins', sans-serif;
+      color: var(--primary-dark);
+      font-size: 1.8rem;
+    }
+
+    .ticket-details {
+      font-size: 0.85rem;
+      margin-bottom: 15px;
+      border-bottom: 1px dashed #ccc;
+      padding-bottom: 10px;
+    }
+
+    .ticket-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin-bottom: 15px;
+    }
+
+    .ticket-table th, .ticket-table td {
+      text-align: left;
+      padding: 4px 0;
+    }
+
+    .ticket-table td.monto {
+      text-align: right;
+    }
+
+    .ticket-totales {
+      border-top: 2px dashed #bbb;
+      padding-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    .ticket-footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: #666;
+    }
+
+    .ticket-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .ticket-actions button {
+      flex: 1;
+      padding: 10px;
+      border-radius: 10px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-print {
+      background-color: var(--accent);
+      color: white;
+    }
+
+    .btn-close {
+      background-color: #ccc;
+      color: #333;
+    }
+
+    /* Responsivo */
+    @media screen and (max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+      .currency-selector-global {
+        position: static;
+        margin: 10px auto 0;
+        width: fit-content;
+      }
+    }
+
+    /* CSS Exclusivo para Impresión */
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #modalTicket, #modalTicket * {
+        visibility: visible;
+      }
+      #modalTicket {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+        background: none;
+      }
+      .ticket-actions {
+        display: none !important;
+      }
+      .ticket-card {
+        box-shadow: none;
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Nota Superior -->
+  <div class="nota">
+    Skincare bonito para cuidar tu piel todos los días ♡ | Envíos a todo el país
+  </div>
+
+  <!-- Header -->
+  <header id="inicio">
+    <div class="currency-selector-global">
+      <span> Moneda:</span>
+      <select id="monedaSelect" onchange="cambiarMoneda()">
+        <option value="MXN" data-symbol="$" data-rate="1">MXN ($)</option>
+        <option value="USD" data-symbol="$" data-rate="0.055">USD ($)</option>
+        <option value="EUR" data-symbol="€" data-rate="0.051">EUR (€)</option>
+        <option value="GBP" data-symbol="£" data-rate="0.043">GBP (£)</option>
+        <option value="CAD" data-symbol="$" data-rate="0.076">CAD ($)</option>
+        <option value="ARS" data-symbol="$" data-rate="580.0">ARS ($)</option>
+        <option value="CLP" data-symbol="$" data-rate="52.0">CLP ($)</option>
+        <option value="COP" data-symbol="$" data-rate="230.0">COP ($)</option>
+      </select>
+    </div>
+    <h1>valecare</h1>
+    <p>La mejor rutina de cuidado facial para tu piel</p>
+  </header>
+
+  <!-- Navegación -->
+  <nav class="navbar">
+    <a href="#inicio">Inicio</a>
+    <a href="#productos">Productos</a>
+    <a href="#carrito">Carrito</a>
+    <a href="#pedido">Realizar Pedido</a>
+  </nav>
+
+  <!-- Contenido Principal -->
+  <div class="container">
+
+    <!-- Sección de Productos (Izquierda / Principal) -->
+    <div>
+      <h2 class="section-title" id="productos">Nuestros Productos</h2>
+
+      <div class="products-grid">
+
+        <!-- Agua micelar -->
+        <div class="producto-card">
+          <div>
+            <img src="aguamicelar.jpg" alt="Agua micelar">
+            <h3>Agua micelar</h3>
+            <p>Limpia suavemente el rostro y retira maquillaje e impurezas.</p>
+          </div>
+          <div>
+            <div class="precio-tag"><span class="simboloMoneda">$</span><span class="precioBase" data-precio-mxn="450">450</span></div>
+            <div class="card-controls">
+              <input type="number" id="cantidadAgua" class="cantidad" value="1" min="1">
+              <button class="btn-primary" onclick="agregarProducto('Agua micelar', 450, 'cantidadAgua')">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jabón facial -->
+        <div class="producto-card">
+          <div>
+           <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skincare Shop - valecare</title>
+  
+  <!-- Tipografía Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #e88fac;
+      --primary-dark: #d45c82;
+      --primary-hover: #b9476b;
+      --accent: #78a88b;
+      --accent-hover: #5f806b;
+      --bg-main: #fff5f8;
+      --bg-card: #ffffff;
+      --bg-soft: #f8dce6;
+      --text-dark: #4a3e43;
+      --text-muted: #7a6a71;
+      --border-radius: 16px;
+      --shadow: 0 10px 25px rgba(212, 92, 130, 0.08);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* Top Announcement Bar */
+    .nota {
+      background: linear-gradient(90deg, #f7cbd9, #f4b8ca);
+      padding: 10px 15px;
+      text-align: center;
+      color: #71394d;
+      font-weight: 500;
+      font-size: 0.9rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    }
+
+    /* Header Banner */
+    header {
+      padding: 50px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #e88fac 0%, #f4b8ca 100%);
+      color: white;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 5px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.95;
+      font-weight: 300;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      display: flex;
+      background-color: var(--accent);
+      justify-content: center;
+      gap: 15px;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .navbar a {
+      color: white;
+      padding: 8px 18px;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 20px;
+      transition: var(--transition);
+    }
+
+    .navbar a:hover {
+      background-color: white;
+      color: var(--accent-hover);
+    }
+
+    /* Selector Global de Moneda */
+    .currency-selector-global {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(8px);
+      padding: 6px 14px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: white;
+      font-size: 0.85rem;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .currency-selector-global select {
+      background: white;
+      color: var(--text-dark);
+      border: none;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-family: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      outline: none;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1250px;
+      margin: 30px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      color: var(--primary-dark);
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 8px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background-color: var(--accent);
+      border-radius: 2px;
+    }
+
+    /* Products Grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 22px;
+    }
+
+    .producto-card {
+      background: var(--bg-card);
+      border-radius: var(--border-radius);
+      padding: 20px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      border: 1px solid #fae6ed;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+    }
+
+    .producto-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(212, 92, 130, 0.15);
+    }
+
+    .producto-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: contain;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      background-color: #fff9fb;
+      padding: 10px;
+    }
+
+    .producto-card h3 {
+      font-size: 1.1rem;
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+    }
+
+    .producto-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      flex-grow: 1;
+    }
+
+    .precio-tag {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--accent-hover);
+      margin-bottom: 12px;
+    }
+
+    .card-controls {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Form Controls & Buttons */
+    .cantidad {
+      width: 60px;
+      padding: 8px;
+      border: 1.5px solid #f0c2d1;
+      border-radius: 10px;
+      text-align: center;
+      font-family: inherit;
+      font-weight: 600;
+      outline: none;
+    }
+
+    .cantidad:focus {
+      border-color: var(--primary-dark);
+    }
+
+    button.btn-primary {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(212, 92, 130, 0.25);
+    }
+
+    button.btn-primary:hover {
+      background: linear-gradient(135deg, var(--primary-hover), var(--primary-dark));
+      transform: scale(1.02);
+    }
+
+    button.btn-danger {
+      background-color: #e76f51;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.8rem;
+
+    }
+
+    /* Sidebar / Sidebar Panels */
+    .sidebar-panel {
+      background: var(--bg-card);
+      border-radius: var(--border-radius);
+      padding: 25px;
+      box-shadow: var(--shadow);
+      border: 1px solid #fae6ed;
+      margin-bottom: 25px;
+    }
+
+    /* Carrito Layout */
+    .carrito-item {
+      background-color: var(--bg-main);
+      padding: 12px 15px;
+      margin: 10px 0;
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-left: 4px solid var(--primary-dark);
+    }
+
+    .carrito-item-info h4 {
+      font-size: 0.95rem;
+      color: var(--primary-dark);
+    }
+
+    .carrito-item-info p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .totales-box {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 2px dashed #f5ceda;
+    }
+
+    .linea-resumen {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    .linea-resumen.total {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-top: 10px;
+    }
+
+    /* Formulario styling */
+    .formulario label {
+      display: block;
+      margin-top: 14px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: var(--accent-hover);
+    }
+
+    .formulario input,
+    .formulario select,
+    .formulario textarea {
+      width: 100%;
+      padding: 10px 14px;
+      margin-top: 6px;
+      border: 1.5px solid #eec4d2;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      outline: none;
+      transition: var(--transition);
+      background-color: #fffafc;
+    }
+
+    .formulario input:focus,
+    .formulario select:focus,
+    .formulario textarea:focus {
+      border-color: var(--primary-dark);
+      background-color: #fff;
+    }
+
+    #opcionesPlazos {
+      display: none;
+      background-color: #fff0f5;
+      padding: 15px;
+      margin-top: 15px;
+      border-radius: 12px;
+      border: 1px solid #f4b8ca;
+    }
+
+    /* Ticket Digital Imprimible Modal/Card */
+    #modalTicket {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .ticket-card {
+      background: #ffffff;
+      width: 100%;
+      max-width: 420px;
+      max-height: 90vh;
+      overflow-y: auto;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      font-family: 'Courier New', Courier, monospace;
+      color: #222;
+      position: relative;
+    }
+
+    .ticket-header {
+      text-align: center;
+      border-bottom: 2px dashed #bbb;
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+    }
+
+    .ticket-header h2 {
+      font-family: 'Poppins', sans-serif;
+      color: var(--primary-dark);
+      font-size: 1.8rem;
+    }
+
+    .ticket-details {
+      font-size: 0.85rem;
+      margin-bottom: 15px;
+      border-bottom: 1px dashed #ccc;
+      padding-bottom: 10px;
+    }
+
+    .ticket-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin-bottom: 15px;
+    }
+
+    .ticket-table th, .ticket-table td {
+      text-align: left;
+      padding: 4px 0;
+    }
+
+    .ticket-table td.monto {
+      text-align: right;
+    }
+
+    .ticket-totales {
+      border-top: 2px dashed #bbb;
+      padding-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    .ticket-footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: #666;
+    }
+
+    .ticket-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .ticket-actions button {
+      flex: 1;
+      padding: 10px;
+      border-radius: 10px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-print {
+      background-color: var(--accent);
+      color: white;
+    }
+
+    .btn-close {
+      background-color: #ccc;
+      color: #333;
+    }
+
+    /* Responsivo */
+    @media screen and (max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+      .currency-selector-global {
+        position: static;
+        margin: 10px auto 0;
+        width: fit-content;
+      }
+    }
+
+    /* CSS Exclusivo para Impresión */
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #modalTicket, #modalTicket * {
+        visibility: visible;
+      }
+      #modalTicket {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+        background: none;
+      }
+      .ticket-actions {
+        display: none !important;
+      }
+      .ticket-card {
+        box-shadow: none;
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Nota Superior -->
+  <div class="nota">
+   Skincare bonito para cuidar tu piel todos los días ♡ | Envíos a todo el país
+  </div>
+
+  <!-- Header -->
+  <header id="inicio">
+    <div class="currency-selector-global">
+      <span> Moneda:</span>
+      <select id="monedaSelect" onchange="cambiarMoneda()">
+        <option value="MXN" data-symbol="$" data-rate="1">MXN ($)</option>
+        <option value="USD" data-symbol="$" data-rate="0.055">USD ($)</option>
+        <option value="EUR" data-symbol="€" data-rate="0.051">EUR (€)</option>
+        <option value="GBP" data-symbol="£" data-rate="0.043">GBP (£)</option>
+        <option value="CAD" data-symbol="$" data-rate="0.076">CAD ($)</option>
+        <option value="ARS" data-symbol="$" data-rate="580.0">ARS ($)</option>
+        <option value="CLP" data-symbol="$" data-rate="52.0">CLP ($)</option>
+        <option value="COP" data-symbol="$" data-rate="230.0">COP ($)</option>
+      </select>
+    </div>
+    <h1>valecare</h1>
+    <p>La mejor rutina de cuidado facial para tu piel</p>
+  </header>
+
+  <!-- Navegación -->
+  <nav class="navbar">
+    <a href="#inicio">Inicio</a>
+    <a href="#productos">Productos</a>
+    <a href="#carrito">Carrito</a>
+    <a href="#pedido">Realizar Pedido</a>
+  </nav>
+
+  <!-- Contenido Principal -->
+  <div class="container">
+
+    <!-- Sección de Productos (Izquierda / Principal) -->
+    <div>
+      <h2 class="section-title" id="productos">Nuestros Productos</h2>
+
+      <div class="products-grid">
+
+        <!-- Agua micelar -->
+        <div class="producto-card">
+          <div>
+            <img src="aguamicelar.jpg" alt="Agua micelar">
+            <h3>Agua micelar</h3>
+            <p>Limpia suavemente el rostro y retira maquillaje e impurezas.</p>
+          </div>
+          <div>
+            <div class="precio-tag"><span class="simboloMoneda">$</span><span class="precioBase" data-precio-mxn="450">450</span></div>
+            <div class="card-controls">
+              <input type="number" id="cantidadAgua" class="cantidad" value="1" min="1">
+              <button class="btn-primary" onclick="agregarProducto('Agua micelar', 450, 'cantidadAgua')">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jabón facial -->
+        <div class="producto-card">
+          <div>
+            <img src="jaboncara.jpg" alt="Jabón facial">
+            <h3>Jabón facial</h3>
+            <p>Elimina el exceso de grasa y suciedad sin resecar la piel.</p>
+          </div>
+          <div>
+            <div class="precio-tag"><span class="simboloMoneda">$</span><span class="precioBase" data-precio-mxn="480">480</span></div>
+            <div class="card-controls">
+              <input type="number" id="cantidadJabon" class="cantidad" value="1" min="1">
+              <button class="btn-primary" onclick="agregarProducto('Jabón facial', 480, 'cantidadJabon')">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Protector solar -->
+        <div class="producto-card">
+          <div>
+            <img src="protectorsolar.jpg" alt="Protector solar">
+            <h3>Protector solar</h3>
+            <p>Protege la piel de los rayos UV con textura ligera FPS 50+.</p>
+          </div>
+          <div>
+            <div class="precio-tag"><span class="simboloMoneda">$</span><span class="precioBase" data-precio-mxn="350">350</span></div>
+            <div class="card-controls">
+              <input type="number" id="cantidadProtector" class="cantidad" value="1" min="1">
+              <button class="btn-primary" onclick="agregarProducto('Protector solar', 350, 'cantidadProtector')">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exfoliante -->
+        <div class="producto-card">
+          <div>
+            <img src="exfoliante.jpg" alt="Exfoliante facial">
+            <h3>Exfoliante facial</h3>
+            <p>Elimina células muertas dejando una textura suave y renovada.</p>
+          </div>
+          <div>
+            <div class="precio-tag"><span class="simboloMoneda">$</span><span class="precioBase" data-precio-mxn="220">220</span></div>
+            <div class="card-controls">
+              <input type="number" id="cantidadExfoliante" class="cantidad" value="1" min="1">
+              <button class="btn-primary" onclick="agregarProducto('Exfoliante facial', 220, 'cantidadExfoliante')">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Crema hidratante -->
+        <div class="producto-card">
+          <div>
+            <img src="crema.jpg" alt="Crema hidratante">
+            <h3>Crema hidratante</h3>
+            <p>Mantiene la piel suave, nutrida y radiante todo el día.</p>
+          </div>
+          <div>
+            <div class="precio-tag"><span class="simboloMoneda">$</span><span class="precioBase" data-precio-mxn="400">400</span></div>
+            <div class="card-controls">
+              <input type="number" id="cantidadCrema" class="cantidad" value="1" min="1">
+              <button class="btn-primary" onclick="agregarProducto('Crema hidratante', 400, 'cantidadCrema')">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contorno de ojos -->
+        <div class="producto-card">
+          <div>
+            <img src="contornoojos.jpg" alt="Contorno de ojos">
+            <h3>Contorno de ojos</h3>
+            <p>Fórmula delicada para desinflamar e hidratar las ojeras.</p>
+          </div>
+          <div>
+            <div class="precio-tag"><span class="simboloMoneda">$</span><span class="precioBase" data-precio-mxn="300">300</span></div>
+            <div class="card-controls">
+              <input type="number" id="cantidadContorno" class="cantidad" value="1" min="1">
+              <button class="btn-primary" onclick="agregarProducto('Contorno de ojos', 300, 'cantidadContorno')">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tratamiento para acné -->
+        <div class="producto-card">
+          <div>
+            <img src="acne.jpg" alt="Tratamiento para el acné">
+            <h3>Tratamiento acné</h3>
+            <p>Reduce imperfecciones y calma rojeces eficazmente.</p>
+          </div>
+          <div>
+            <div class="precio-tag"><span class="simboloMoneda">$</span><span class="precioBase" data-precio-mxn="670">670</span></div>
+            <div class="card-controls">
+              <input type="number" id="cantidadAcne" class="cantidad" value="1" min="1">
+              <button class="btn-primary" onclick="agregarProducto('Tratamiento para el acné', 670, 'cantidadAcne')">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sérum facial -->
+        <div class="producto-card">
+          <div>
+            <img src="serum.jpg" alt="Sérum facial">
+            <h3>Sérum facial</h3>
+            <p>Aporta hidratación profunda e iluminación instantánea.</p>
+          </div>
+          <div>
+            <div class="precio-tag"><span class="simboloMoneda">$</span><span class="precioBase" data-precio-mxn="720">720</span></div>
+            <div class="card-controls">
+              <input type="number" id="cantidadSerum" class="cantidad" value="1" min="1">
+              <button class="btn-primary" onclick="agregarProducto('Sérum facial', 720, 'cantidadSerum')">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Barra Lateral (Carrito + Formulario) -->
+    <div>
+
+      <!-- Carrito -->
+      <div class="sidebar-panel" id="carrito">
+        <h2 class="section-title">Tu Carrito</h2>
+
+        <div id="listaCarrito">
+          <p style="color: var(--text-muted); font-size: 0.9rem;">El carrito está vacío.</p>
+        </div>
+
+        <div class="totales-box">
+          <div class="linea-resumen">
+            <span>Subtotal:</span>
+            <span><span class="simboloMoneda">$</span><span id="subtotal">0.00</span></span>
+          </div>
+          <div class="linea-resumen">
+            <span>Envío:</span>
+            <span><span class="simboloMoneda">$</span><span id="envio">0.00</span></span>
+          </div>
+          <div class="linea-resumen total">
+            <span>Total:</span>
+            <span><span class="simboloMoneda">$</span><span id="total">0.00</span></span>
+          </div>
+        </div>
+
+        <button class="btn-danger" style="width: 100%; margin-top: 15px;" onclick="vaciarCarrito()">Vaciar carrito</button>
+      </div>
+
+      <!-- Formulario de Pedido -->
+      <div class="sidebar-panel formulario" id="pedido">
+        <h2 class="section-title">Datos del Pedido</h2>
+
+        <label>Nombre completo:</label>
+        <input type="text" id="nombre" placeholder="Ej. Valeria Gómez">
+
+        <label>Correo electrónico:</label>
+        <input type="email" id="correo" placeholder="ejemplo@correo.com">
+
+        <label>Teléfono:</label>
+        <input type="tel" id="telefono" placeholder="10 dígitos">
+
+        <label>Dirección:</label>
+        <input type="text" id="direccion" placeholder="Calle y número">
+
+        <label>Colonia:</label>
+        <input type="text" id="colonia" placeholder="Tu colonia">
+
+        <label>Ciudad:</label>
+        <input type="text" id="ciudad" placeholder="Tu ciudad">
+
+        <label>Código postal:</label>
+        <input type="text" id="cp" placeholder="Código postal">
+
+        <label>Tipo de entrega:</label>
+        <select id="entrega" onchange="calcularTotal()">
+          <option value="normal">Envío normal (MXN $80)</option>
+          <option value="express">Envío express (MXN $150)</option>
+        </select>
+
+        <label>Método de pago:</label>
+        <select id="metodoPago" onchange="mostrarPlazos()">
+          <option value="">Selecciona método</option>
+          <option value="Tarjeta">Tarjeta de Crédito / Débito</option>
+          <option value="Transferencia">Transferencia bancaria</option>
+          <option value="Efectivo">Efectivo contra entrega</option>
+          <option value="Plazos">Pago a plazos</option>
+        </select>
+
+        <!-- Opciones de Pago a Plazos -->
+        <div id="opcionesPlazos">
+          <label>Número de plazos:</label>
+          <select id="plazos" onchange="calcularPlazo()">
+            <option value="3">3 meses</option>
+            <option value="6">6 meses</option>
+            <option value="12">12 meses</option>
+          </select>
+
+          <p style="margin-top: 8px; font-size: 0.85rem; font-weight: 600; color: var(--primary-dark);">
+            Mensualidad aprox: <span class="simboloMoneda">$</span><span id="cantidadPlazo">0.00</span>
+          </p>
+        </div>
+
+        <label>Instrucciones de entrega:</label>
+        <textarea id="comentarios" placeholder="Ej. Dejar con el vigilante..."></textarea>
+
+        <button class="btn-primary" style="width: 100%; margin-top: 20px;" onclick="realizarPedido()">Confirmar y Generar Ticket</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- MODAL / TICKET DIGITAL IMPRIMIBLE -->
+  <div id="modalTicket">
+    <div class="ticket-card">
+      <div class="ticket-header">
+        <h2>valecare ♡</h2>
+        <p>Comprobante Digital de Compra</p>
+        <p style="font-size: 0.75rem; margin-top: 4px;" id="ticketFecha"></p>
+      </div>
+
+      <div class="ticket-details">
+        <p><b>Orden:</b> #VC-<span id="ticketFolio"></span></p>
+        <p><b>Cliente:</b> <span id="ticketCliente"></span></p>
+        <p><b>Dirección:</b> <span id="ticketDireccion"></span></p>
+        <p><b>Pago:</b> <span id="ticketMetodo"></span></p>
+        <p><b>Moneda:</b> <span id="ticketMoneda"></span></p>
+      </div>
+
+      <table class="ticket-table">
+        <thead>
+          <tr>
+            <th>Cant. / Prod</th>
+            <th style="text-align: right;">Total</th>
+          </tr>
+        </thead>
+        <tbody id="ticketProductosBody"></tbody>
+      </table>
+
+      <div class="ticket-totales">
+        <div style="display: flex; justify-content: space-between;">
+          <span>Subtotal:</span>
+          <span><span id="ticketSimboloSub"></span><span id="ticketSubtotal"></span></span>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+          <span>Envío:</span>
+          <span><span id="ticketSimboloEnv"></span><span id="ticketEnvio"></span></span>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 1.05rem; margin-top: 5px;">
+          <span>TOTAL:</span>
+          <span><span id="ticketSimboloTot"></span><span id="ticketTotal"></span></span>
+        </div>
+        <div id="ticketPlazosInfo" style="margin-top: 6px; font-size: 0.8rem; color: #555;"></div>
+      </div>
+
+      <div class="ticket-footer">
+        <p>¡Gracias por cuidar tu piel con nosotros!</p>
+        <p>www.valecare.com</p>
+      </div>
+
+      <div class="ticket-actions">
+        <button class="btn-print" onclick="window.print()">Imprimir Ticket</button>
+        <button class="btn-close" onclick="cerrarTicket()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <h2>valecare</h2>
+    <p>Gracias por visitar nuestra tienda ♡</p>
+    <p>Skincare bonito para cuidar tu piel todos los días.</p>
+  </footer>
+
+
+  <script>
+    // Carrito de compras en MXN base
+    let carrito = [];
+
+    // Helper para obtener tasa de cambio actual
+    function getMonedaActual() {
+      let select = document.getElementById("monedaSelect");
+      let option = select.options[select.selectedIndex];
+      return {
+        code: option.value,
+        symbol: option.getAttribute("data-symbol"),
+        rate: parseFloat(option.getAttribute("data-rate"))
+      };
+    }
+
+    // Actualizar vista de precios en el catálogo
+    function cambiarMoneda() {
+      let m = getMonedaActual();
+
+      // Cambiar símbolos en la UI
+      document.querySelectorAll(".simboloMoneda").forEach(el => el.textContent = m.symbol);
+
+      // Recalcular precios de catálogo
+      document.querySelectorAll(".precioBase").forEach(el => {
+        let precioMXN = parseFloat(el.getAttribute("data-precio-mxn"));
+        let precioConvertido = (precioMXN * m.rate).toFixed(2);
+        el.textContent = precioConvertido;
+      });
+
+      // Recalcular totales del carrito
+      actualizarCarrito();
+    }
+
+    // Agregar producto al carrito
+    function agregarProducto(nombre, precioMXN, idCantidad) {
+      let cantidadInput = document.getElementById(idCantidad);
+      let cantidad = parseInt(cantidadInput.value);
+
+      if (cantidad < 1 || isNaN(cantidad)) {
+        alert("La cantidad debe ser de al menos 1 pieza.");
+        return;
+      }
+
+      let productoExistente = carrito.find(item => item.nombre === nombre);
+
+      if (productoExistente) {
+        productoExistente.cantidad += cantidad;
+      } else {
+        carrito.push({
+          nombre: nombre,
+          precioMXN: precioMXN,
+          cantidad: cantidad
+        });
+      }
+
+      actualizarCarrito();
+      alert(`¡${cantidad} pieza(s) de "${nombre}" agregadas al carrito!`);
+    }
+
+    // Actualizar vista del carrito
+    function actualizarCarrito() {
+      let lista = document.getElementById("listaCarrito");
+      let m = getMonedaActual();
+      lista.innerHTML = "";
+
+      if (carrito.length === 0) {
+        lista.innerHTML = '<p style="color: var(--text-muted); font-size: 0.9rem;">El carrito está vacío.</p>';
+      } else {
+        carrito.forEach((producto, index) => {
+          let precioConvertido = (producto.precioMXN * m.rate).toFixed(2);
+          let subtotalProducto = (precioConvertido * producto.cantidad).toFixed(2);
+
+          let div = document.createElement("div");
+          div.className = "carrito-item";
+          div.innerHTML = `
+            <div class="carrito-item-info">
+              <h4>${producto.nombre}</h4>
+              <p>Cant: ${producto.cantidad} | P/U: ${m.symbol}${precioConvertido}</p>
+              <p>Subtotal: <b>${m.symbol}${subtotalProducto}</b></p>
+            </div>
+            <button class="btn-danger" onclick="eliminarProducto(${index})">✕</button>
+          `;
+          lista.appendChild(div);
+        });
+      }
+
+      calcularTotal();
+    }
+
+    // Eliminar producto
+    function eliminarProducto(index) {
+      carrito.splice(index, 1);
+      actualizarCarrito();
+    }
+
+    // Vaciar carrito
+    function vaciarCarrito() {
+      carrito = [];
+      actualizarCarrito();
+    }
+
+    // Calcular Totales
+    function calcularTotal() {
+      let m = getMonedaActual();
+      let subtotalMXN = 0;
+
+      carrito.forEach(prod => {
+        subtotalMXN += prod.precioMXN * prod.cantidad;
+      });
+
+      let costoEnvioMXN = 0;
+      if (carrito.length > 0) {
+        let tipoEntrega = document.getElementById("entrega").value;
+        costoEnvioMXN = tipoEntrega === "express" ? 150 : 80;
+      }
+
+      let totalMXN = subtotalMXN + costoEnvioMXN;
+
+      // Conversión final a moneda seleccionada
+      let subtotalFinal = (subtotalMXN * m.rate).toFixed(2);
+      let envioFinal = (costoEnvioMXN * m.rate).toFixed(2);
+      let totalFinal = (totalMXN * m.rate).toFixed(2);
+
+      document.getElementById("subtotal").textContent = subtotalFinal;
+      document.getElementById("envio").textContent = envioFinal;
+      document.getElementById("total").textContent = totalFinal;
+
+      calcularPlazo();
+    }
+
+    // Opciones de pagos a plazos
+    function mostrarPlazos() {
+      let metodo = document.getElementById("metodoPago").value;
+      let opciones = document.getElementById("opcionesPlazos");
+      opciones.style.display = metodo === "Plazos" ? "block" : "none";
+      calcularPlazo();
+    }
+
+    function calcularPlazo() {
+      let metodo = document.getElementById("metodoPago").value;
+      if (metodo !== "Plazos") {
+        document.getElementById("cantidadPlazo").textContent = "0.00";
+        return;
+      }
+
+      let total = parseFloat(document.getElementById("total").textContent) || 0;
+      let numPlazos = parseInt(document.getElementById("plazos").value);
+      let pagoPorPlazo = (total / numPlazos).toFixed(2);
+
+      document.getElementById("cantidadPlazo").textContent = pagoPorPlazo;
+    }
+
+    // Realizar Pedido & Generar Ticket
+    function realizarPedido() {
+      if (carrito.length === 0) {
+        alert("Por favor agrega al menos un producto al carrito.");
+        return;
+      }
+
+      let nombre = document.getElementById("nombre").value.trim();
+      let correo = document.getElementById("correo").value.trim();
+      let telefono = document.getElementById("telefono").value.trim();
+      let direccion = document.getElementById("direccion").value.trim();
+      let colonia = document.getElementById("colonia").value.trim();
+      let ciudad = document.getElementById("ciudad").value.trim();
+      let cp = document.getElementById("cp").value.trim();
+      let metodo = document.getElementById("metodoPago").value;
+
+      if (!nombre || !correo || !telefono || !direccion || !colonia || !ciudad || !cp || !metodo) {
+        alert("Por favor completa todos los campos del formulario.");
+        return;
+      }
+
+      // Llenar datos del Ticket
+      let m = getMonedaActual();
+      let fecha = new Date().toLocaleString();
+      let folio = Math.floor(100000 + Math.random() * 900000);
+
+      document.getElementById("ticketFecha").textContent = fecha;
+      document.getElementById("ticketFolio").textContent = folio;
+      document.getElementById("ticketCliente").textContent = nombre;
+      document.getElementById("ticketDireccion").textContent = `${direccion}, ${colonia}, ${ciudad}`;
+      document.getElementById("ticketMetodo").textContent = metodo;
+      document.getElementById("ticketMoneda").textContent = `${m.code} (${m.symbol})`;
+
+      // Renderizar productos en ticket
+      let tbody = document.getElementById("ticketProductosBody");
+      tbody.innerHTML = "";
+
+      carrito.forEach(p => {
+        let pUnit = (p.precioMXN * m.rate).toFixed(2);
+        let pSub = (pUnit * p.cantidad).toFixed(2);
+
+        let tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${p.cantidad}x ${p.nombre}</td>
+          <td class="monto">${m.symbol}${pSub}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      let sub = document.getElementById("subtotal").textContent;
+      let env = document.getElementById("envio").textContent;
+      let tot = document.getElementById("total").textContent;
+
+      document.getElementById("ticketSimboloSub").textContent = m.symbol;
+      document.getElementById("ticketSubtotal").textContent = sub;
+      
+      document.getElementById("ticketSimboloEnv").textContent = m.symbol;
+      document.getElementById("ticketEnvio").textContent = env;
+
+      document.getElementById("ticketSimboloTot").textContent = m.symbol;
+      document.getElementById("ticketTotal").textContent = tot;
+
+      let plazosInfo = document.getElementById("ticketPlazosInfo");
+      if (metodo === "Plazos") {
+        let nPlazos = document.getElementById("plazos").value;
+        let cantPlazo = document.getElementById("cantidadPlazo").textContent;
+        plazosInfo.innerHTML = `* Financiado a ${nPlazos} meses de ${m.symbol}${cantPlazo} c/u`;
+      } else {
+        plazosInfo.innerHTML = "";
+      }
+
+      // Mostrar Modal del Ticket
+      document.getElementById("modalTicket").style.display = "flex";
+    }
+
+    function cerrarTicket() {
+      document.getElementById("modalTicket").style.display = "none";
+    }
+
+    // Inicializar visualización de moneda por defecto
+    cambiarMoneda();
+  </script>
+
+</body>
+</html>
+            <h3>Jabón facial</h3>
+            <p>Elimina el exceso de grasa y suciedad sin resecar la piel.</p>
+          </div>
+          <div>
+            <div class="precio-tag"><span class="simboloMoneda">$</span><span class="precioBase" data-precio-mxn="480">480</span></div>
+            <div class="card-controls">
+              <input type="number" id="cantidadJabon" class="cantidad" value="1" min="1">
+              <button class="btn-primary" onclick="agregarProducto('Jabón facial', 480, 'cantidadJabon')">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Protector solar -->
+        <div class="producto-card">
+          <div>
+            <img src="protectorsolar.jpg" alt="Protector solar">
+            <h3>Protector solar</h3>
+            <p>Protege la piel de los rayos UV con textura ligera FPS 50+.</p>
+          </div>
+          <div>
+            <div class="precio-tag"><span class="simboloMoneda">$</span><span class="precioBase" data-precio-mxn="350">350</span></div>
+            <div class="card-controls">
+              <input type="number" id="cantidadProtector" class="cantidad" value="1" min="1">
+              <button class="btn-primary" onclick="agregarProducto('Protector solar', 350, 'cantidadProtector')">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exfoliante -->
+        <div class="producto-card">
+          <div>
+            <img src="exfoliante.jpg" alt="Exfoliante facial">
+            <h3>Exfoliante facial</h3>
+            <p>Elimina células muertas dejando una textura suave y renovada.</p>
+          </div>
+          <div>
+            <div class="precio-tag"><span class="simboloMoneda">$</span><span class="precioBase" data-precio-mxn="220">220</span></div>
+            <div class="card-controls">
+              <input type="number" id="cantidadExfoliante" class="cantidad" value="1" min="1">
+              <button class="btn-primary" onclick="agregarProducto('Exfoliante facial', 220, 'cantidadExfoliante')">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Crema hidratante -->
+        <div class="producto-card">
+          <div>
+            <img src="crema.jpg" alt="Crema hidratante">
+            <h3>Crema hidratante</h3>
+            <p>Mantiene la piel suave, nutrida y radiante todo el día.</p>
+          </div>
+          <div>
+            <div class="precio-tag"><span class="simboloMoneda">$</span><span class="precioBase" data-precio-mxn="400">400</span></div>
+            <div class="card-controls">
+              <input type="number" id="cantidadCrema" class="cantidad" value="1" min="1">
+              <button class="btn-primary" onclick="agregarProducto('Crema hidratante', 400, 'cantidadCrema')">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contorno de ojos -->
+        <div class="producto-card">
+          <div>
+            <img src="contornoojos.jpg" alt="Contorno de ojos">
+            <h3>Contorno de ojos</h3>
+            <p>Fórmula delicada para desinflamar e hidratar las ojeras.</p>
+          </div>
+          <div>
+            <div class="precio-tag"><span class="simboloMoneda">$</span><span class="precioBase" data-precio-mxn="300">300</span></div>
+            <div class="card-controls">
+              <input type="number" id="cantidadContorno" class="cantidad" value="1" min="1">
+              <button class="btn-primary" onclick="agregarProducto('Contorno de ojos', 300, 'cantidadContorno')">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tratamiento para acné -->
+        <div class="producto-card">
+          <div>
+            <img src="acne.jpg" alt="Tratamiento para el acné">
+            <h3>Tratamiento acné</h3>
+            <p>Reduce imperfecciones y calma rojeces eficazmente.</p>
+          </div>
+          <div>
+            <div class="precio-tag"><span class="simboloMoneda">$</span><span class="precioBase" data-precio-mxn="670">670</span></div>
+            <div class="card-controls">
+              <input type="number" id="cantidadAcne" class="cantidad" value="1" min="1">
+              <button class="btn-primary" onclick="agregarProducto('Tratamiento para el acné', 670, 'cantidadAcne')">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sérum facial -->
+        <div class="producto-card">
+          <div>
+            <img src="serum.jpg" alt="Sérum facial">
+            <h3>Sérum facial</h3>
+            <p>Aporta hidratación profunda e iluminación instantánea.</p>
+          </div>
+          <div>
+            <div class="precio-tag"><span class="simboloMoneda">$</span><span class="precioBase" data-precio-mxn="720">720</span></div>
+            <div class="card-controls">
+              <input type="number" id="cantidadSerum" class="cantidad" value="1" min="1">
+              <button class="btn-primary" onclick="agregarProducto('Sérum facial', 720, 'cantidadSerum')">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Barra Lateral (Carrito + Formulario) -->
+    <div>
+
+      <!-- Carrito -->
+      <div class="sidebar-panel" id="carrito">
+        <h2 class="section-title">Tu Carrito</h2>
+
+        <div id="listaCarrito">
+          <p style="color: var(--text-muted); font-size: 0.9rem;">El carrito está vacío.</p>
+        </div>
+
+        <div class="totales-box">
+          <div class="linea-resumen">
+            <span>Subtotal:</span>
+            <span><span class="simboloMoneda">$</span><span id="subtotal">0.00</span></span>
+          </div>
+          <div class="linea-resumen">
+            <span>Envío:</span>
+            <span><span class="simboloMoneda">$</span><span id="envio">0.00</span></span>
+          </div>
+          <div class="linea-resumen total">
+            <span>Total:</span>
+            <span><span class="simboloMoneda">$</span><span id="total">0.00</span></span>
+          </div>
+        </div>
+
+        <button class="btn-danger" style="width: 100%; margin-top: 15px;" onclick="vaciarCarrito()">Vaciar carrito</button>
+      </div>
+
+      <!-- Formulario de Pedido -->
+      <div class="sidebar-panel formulario" id="pedido">
+        <h2 class="section-title">Datos del Pedido</h2>
+
+        <label>Nombre completo:</label>
+        <input type="text" id="nombre" placeholder="Ej. Valeria Gómez">
+
+        <label>Correo electrónico:</label>
+        <input type="email" id="correo" placeholder="ejemplo@correo.com">
+
+        <label>Teléfono:</label>
+        <input type="tel" id="telefono" placeholder="10 dígitos">
+
+        <label>Dirección:</label>
+        <input type="text" id="direccion" placeholder="Calle y número">
+
+        <label>Colonia:</label>
+        <input type="text" id="colonia" placeholder="Tu colonia">
+
+        <label>Ciudad:</label>
+        <input type="text" id="ciudad" placeholder="Tu ciudad">
+
+        <label>Código postal:</label>
+        <input type="text" id="cp" placeholder="Código postal">
+
+        <label>Tipo de entrega:</label>
+        <select id="entrega" onchange="calcularTotal()">
+          <option value="normal">Envío normal (MXN $80)</option>
+          <option value="express">Envío express (MXN $150)</option>
+        </select>
+
+        <label>Método de pago:</label>
+        <select id="metodoPago" onchange="mostrarPlazos()">
+          <option value="">Selecciona método</option>
+          <option value="Tarjeta">Tarjeta de Crédito / Débito</option>
+          <option value="Transferencia">Transferencia bancaria</option>
+          <option value="Efectivo">Efectivo contra entrega</option>
+          <option value="Plazos">Pago a plazos</option>
+        </select>
+
+        <!-- Opciones de Pago a Plazos -->
+        <div id="opcionesPlazos">
+          <label>Número de plazos:</label>
+          <select id="plazos" onchange="calcularPlazo()">
+            <option value="3">3 meses</option>
+            <option value="6">6 meses</option>
+            <option value="12">12 meses</option>
+          </select>
+
+          <p style="margin-top: 8px; font-size: 0.85rem; font-weight: 600; color: var(--primary-dark);">
+            Mensualidad aprox: <span class="simboloMoneda">$</span><span id="cantidadPlazo">0.00</span>
+          </p>
+        </div>
+
+        <label>Instrucciones de entrega:</label>
+        <textarea id="comentarios" placeholder="Ej. Dejar con el vigilante..."></textarea>
+
+        <button class="btn-primary" style="width: 100%; margin-top: 20px;" onclick="realizarPedido()">Confirmar y Generar Ticket</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- MODAL / TICKET DIGITAL IMPRIMIBLE -->
+  <div id="modalTicket">
+    <div class="ticket-card">
+      <div class="ticket-header">
+        <h2>valecare ♡</h2>
+        <p>Comprobante Digital de Compra</p>
+        <p style="font-size: 0.75rem; margin-top: 4px;" id="ticketFecha"></p>
+      </div>
+
+      <div class="ticket-details">
+        <p><b>Orden:</b> #VC-<span id="ticketFolio"></span></p>
+        <p><b>Cliente:</b> <span id="ticketCliente"></span></p>
+        <p><b>Dirección:</b> <span id="ticketDireccion"></span></p>
+        <p><b>Pago:</b> <span id="ticketMetodo"></span></p>
+        <p><b>Moneda:</b> <span id="ticketMoneda"></span></p>
+      </div>
+
+      <table class="ticket-table">
+        <thead>
+          <tr>
+            <th>Cant. / Prod</th>
+            <th style="text-align: right;">Total</th>
+          </tr>
+        </thead>
+        <tbody id="ticketProductosBody"></tbody>
+      </table>
+
+      <div class="ticket-totales">
+        <div style="display: flex; justify-content: space-between;">
+          <span>Subtotal:</span>
+          <span><span id="ticketSimboloSub"></span><span id="ticketSubtotal"></span></span>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+          <span>Envío:</span>
+          <span><span id="ticketSimboloEnv"></span><span id="ticketEnvio"></span></span>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 1.05rem; margin-top: 5px;">
+          <span>TOTAL:</span>
+          <span><span id="ticketSimboloTot"></span><span id="ticketTotal"></span></span>
+        </div>
+        <div id="ticketPlazosInfo" style="margin-top: 6px; font-size: 0.8rem; color: #555;"></div>
+      </div>
+
+      <div class="ticket-footer">
+        <p>¡Gracias por cuidar tu piel con nosotros!</p>
+        <p>www.valecare.com</p>
+      </div>
+
+      <div class="ticket-actions">
+        <button class="btn-print" onclick="window.print()">Imprimir Ticket</button>
+        <button class="btn-close" onclick="cerrarTicket()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <h2>valecare</h2>
+    <p>Gracias por visitar nuestra tienda ♡</p>
+    <p>Skincare bonito para cuidar tu piel todos los días.</p>
+  </footer>
+
+
+  <script>
+    // Carrito de compras en MXN base
+    let carrito = [];
+
+    // Helper para obtener tasa de cambio actual
+    function getMonedaActual() {
+      let select = document.getElementById("monedaSelect");
+      let option = select.options[select.selectedIndex];
+      return {
+        code: option.value,
+        symbol: option.getAttribute("data-symbol"),
+        rate: parseFloat(option.getAttribute("data-rate"))
+      };
+    }
+
+    // Actualizar vista de precios en el catálogo
+    function cambiarMoneda() {
+      let m = getMonedaActual();
+
+      // Cambiar símbolos en la UI
+      document.querySelectorAll(".simboloMoneda").forEach(el => el.textContent = m.symbol);
+
+      // Recalcular precios de catálogo
+      document.querySelectorAll(".precioBase").forEach(el => {
+        let precioMXN = parseFloat(el.getAttribute("data-precio-mxn"));
+        let precioConvertido = (precioMXN * m.rate).toFixed(2);
+        el.textContent = precioConvertido;
+      });
+
+      // Recalcular totales del carrito
+      actualizarCarrito();
+    }
+
+    // Agregar producto al carrito
+    function agregarProducto(nombre, precioMXN, idCantidad) {
+      let cantidadInput = document.getElementById(idCantidad);
+      let cantidad = parseInt(cantidadInput.value);
+
+      if (cantidad < 1 || isNaN(cantidad)) {
+        alert("La cantidad debe ser de al menos 1 pieza.");
+        return;
+      }
+
+      let productoExistente = carrito.find(item => item.nombre === nombre);
+
+      if (productoExistente) {
+        productoExistente.cantidad += cantidad;
+      } else {
+        carrito.push({
+          nombre: nombre,
+          precioMXN: precioMXN,
+          cantidad: cantidad
+        });
+      }
+
+      actualizarCarrito();
+      alert(`¡${cantidad} pieza(s) de "${nombre}" agregadas al carrito!`);
+    }
+
+    // Actualizar vista del carrito
+    function actualizarCarrito() {
+      let lista = document.getElementById("listaCarrito");
+      let m = getMonedaActual();
+      lista.innerHTML = "";
+
+      if (carrito.length === 0) {
+        lista.innerHTML = '<p style="color: var(--text-muted); font-size: 0.9rem;">El carrito está vacío.</p>';
+      } else {
+        carrito.forEach((producto, index) => {
+          let precioConvertido = (producto.precioMXN * m.rate).toFixed(2);
+          let subtotalProducto = (precioConvertido * producto.cantidad).toFixed(2);
+
+          let div = document.createElement("div");
+          div.className = "carrito-item";
+          div.innerHTML = `
+            <div class="carrito-item-info">
+              <h4>${producto.nombre}</h4>
+              <p>Cant: ${producto.cantidad} | P/U: ${m.symbol}${precioConvertido}</p>
+              <p>Subtotal: <b>${m.symbol}${subtotalProducto}</b></p>
+            </div>
+            <button class="btn-danger" onclick="eliminarProducto(${index})">✕</button>
+          `;
+          lista.appendChild(div);
+        });
+      }
+
+      calcularTotal();
+    }
+
+    // Eliminar producto
+    function eliminarProducto(index) {
+      carrito.splice(index, 1);
+      actualizarCarrito();
+    }
+
+    // Vaciar carrito
+    function vaciarCarrito() {
+      carrito = [];
+      actualizarCarrito();
+    }
+
+    // Calcular Totales
+    function calcularTotal() {
+      let m = getMonedaActual();
+      let subtotalMXN = 0;
+
+      carrito.forEach(prod => {
+        subtotalMXN += prod.precioMXN * prod.cantidad;
+      });
+
+      let costoEnvioMXN = 0;
+      if (carrito.length > 0) {
+        let tipoEntrega = document.getElementById("entrega").value;
+        costoEnvioMXN = tipoEntrega === "express" ? 150 : 80;
+      }
+
+      let totalMXN = subtotalMXN + costoEnvioMXN;
+
+      // Conversión final a moneda seleccionada
+      let subtotalFinal = (subtotalMXN * m.rate).toFixed(2);
+      let envioFinal = (costoEnvioMXN * m.rate).toFixed(2);
+      let totalFinal = (totalMXN * m.rate).toFixed(2);
+
+      document.getElementById("subtotal").textContent = subtotalFinal;
+      document.getElementById("envio").textContent = envioFinal;
+      document.getElementById("total").textContent = totalFinal;
+
+      calcularPlazo();
+    }
+
+    // Opciones de pagos a plazos
+    function mostrarPlazos() {
+      let metodo = document.getElementById("metodoPago").value;
+      let opciones = document.getElementById("opcionesPlazos");
+      opciones.style.display = metodo === "Plazos" ? "block" : "none";
+      calcularPlazo();
+    }
+
+    function calcularPlazo() {
+      let metodo = document.getElementById("metodoPago").value;
+      if (metodo !== "Plazos") {
+        document.getElementById("cantidadPlazo").textContent = "0.00";
+        return;
+      }
+
+      let total = parseFloat(document.getElementById("total").textContent) || 0;
+      let numPlazos = parseInt(document.getElementById("plazos").value);
+      let pagoPorPlazo = (total / numPlazos).toFixed(2);
+
+      document.getElementById("cantidadPlazo").textContent = pagoPorPlazo;
+    }
+
+    // Realizar Pedido & Generar Ticket
+    function realizarPedido() {
+      if (carrito.length === 0) {
+        alert("Por favor agrega al menos un producto al carrito.");
+        return;
+      }
+
+      let nombre = document.getElementById("nombre").value.trim();
+      let correo = document.getElementById("correo").value.trim();
+      let telefono = document.getElementById("telefono").value.trim();
+      let direccion = document.getElementById("direccion").value.trim();
+      let colonia = document.getElementById("colonia").value.trim();
+      let ciudad = document.getElementById("ciudad").value.trim();
+      let cp = document.getElementById("cp").value.trim();
+      let metodo = document.getElementById("metodoPago").value;
+
+      if (!nombre || !correo || !telefono || !direccion || !colonia || !ciudad || !cp || !metodo) {
+        alert("Por favor completa todos los campos del formulario.");
+        return;
+      }
+
+      // Llenar datos del Ticket
+      let m = getMonedaActual();
+      let fecha = new Date().toLocaleString();
+      let folio = Math.floor(100000 + Math.random() * 900000);
+
+      document.getElementById("ticketFecha").textContent = fecha;
+      document.getElementById("ticketFolio").textContent = folio;
+      document.getElementById("ticketCliente").textContent = nombre;
+      document.getElementById("ticketDireccion").textContent = `${direccion}, ${colonia}, ${ciudad}`;
+      document.getElementById("ticketMetodo").textContent = metodo;
+      document.getElementById("ticketMoneda").textContent = `${m.code} (${m.symbol})`;
+
+      // Renderizar productos en ticket
+      let tbody = document.getElementById("ticketProductosBody");
+      tbody.innerHTML = "";
+
+      carrito.forEach(p => {
+        let pUnit = (p.precioMXN * m.rate).toFixed(2);
+        let pSub = (pUnit * p.cantidad).toFixed(2);
+
+        let tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${p.cantidad}x ${p.nombre}</td>
+          <td class="monto">${m.symbol}${pSub}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      let sub = document.getElementById("subtotal").textContent;
+      let env = document.getElementById("envio").textContent;
+      let tot = document.getElementById("total").textContent;
+
+      document.getElementById("ticketSimboloSub").textContent = m.symbol;
+      document.getElementById("ticketSubtotal").textContent = sub;
+      
+      document.getElementById("ticketSimboloEnv").textContent = m.symbol;
+      document.getElementById("ticketEnvio").textContent = env;
+
+      document.getElementById("ticketSimboloTot").textContent = m.symbol;
+      document.getElementById("ticketTotal").textContent = tot;
+
+      let plazosInfo = document.getElementById("ticketPlazosInfo");
+      if (metodo === "Plazos") {
+        let nPlazos = document.getElementById("plazos").value;
+        let cantPlazo = document.getElementById("cantidadPlazo").textContent;
+        plazosInfo.innerHTML = `* Financiado a ${nPlazos} meses de ${m.symbol}${cantPlazo} c/u`;
+      } else {
+        plazosInfo.innerHTML = "";
+      }
+
+      // Mostrar Modal del Ticket
+      document.getElementById("modalTicket").style.display = "flex";
+    }
+
+    function cerrarTicket() {
+      document.getElementById("modalTicket").style.display = "none";
+    }
+
+    // Inicializar visualización de moneda por defecto
+    cambiarMoneda();
+  </script>
+
+</body>
+</html>
